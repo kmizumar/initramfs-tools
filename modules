@@ -9,3 +9,11 @@
 #
 # raid1
 # sd_mod
+nbd
+vfio-pci
+aufs
+bridge
+br_netfilter
+nf_nat
+xt_conntrack
+ip_tables
