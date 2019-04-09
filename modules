@@ -33,3 +33,5 @@ xfrm_user
 xt_addrtype
 xt_conntrack
 veth
+
+msr
