@@ -37,6 +37,6 @@ done
 # Prevent dwc3 (Synopsys DesignWare Core SuperSpeed USB 3.0 driver) module from
 # taking MN-Core device(s)
 #
-# Added by PFN Chip team <chip-team@preferred.jp> - 2019/06/19 
+# Added by PFN Chip team <chip-team@preferred.jp> - 2019/06/19
 echo "blacklist dwc3" >> /etc/modprobe.d/initramfs.conf
 echo "blacklist dwc3_pci" >> /etc/modprobe.d/initramfs.conf
