@@ -24,6 +24,14 @@ for x in $(cat /proc/cmdline); do
 	esac
 done
 
+#
+# Prevent dwc3 (Synopsys DesignWare Core SuperSpeed USB 3.0 driver) module from
+# taking MN-Core device(s)
+#
+# Added by PFN Chip team <chip-team@preferred.jp> - 2019/06/19
+echo "blacklist dwc3" >> /etc/modprobe.d/initramfs.conf
+echo "blacklist dwc3_pci" >> /etc/modprobe.d/initramfs.conf
+
 # sanity check
 [ -z "${blacklist}" ] && exit 0
 
@@ -32,11 +40,3 @@ IFS=','
 for b in ${blacklist}; do
 	echo "blacklist $b" >> /etc/modprobe.d/initramfs.conf
 done
-
-#
-# Prevent dwc3 (Synopsys DesignWare Core SuperSpeed USB 3.0 driver) module from
-# taking MN-Core device(s)
-#
-# Added by PFN Chip team <chip-team@preferred.jp> - 2019/06/19
-echo "blacklist dwc3" >> /etc/modprobe.d/initramfs.conf
-echo "blacklist dwc3_pci" >> /etc/modprobe.d/initramfs.conf
